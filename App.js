@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import User from './Components/User/User';
 
 export default function App() {
   const [name, setName] = useState(null);
@@ -22,6 +23,10 @@ export default function App() {
         }}
         style={{width: 200, height: 200}}
       />
+      <Text>data length: {user.length}</Text>
+      {
+        user.map(user => <User user={user}></User>)
+      }
       <TextInput
       style={{
         height: 40,
